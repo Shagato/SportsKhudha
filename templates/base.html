@@ -8,54 +8,25 @@
     <!-- CSS BootStrap -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
     
-    <title>Your Page Title</title>
+    <title>Sports Khudha</title>
+
 </head>
 <body>
-    <h1>Your Convdvsstent Goes Here</h1>
-    <p class="p-3 mb-2 bg-success text-white" >
-      kasjkdsanklsmdak
-    </p>
+    <Header>
+      {%include 'partial/nav.html'%}
+    </Header>
 
+    <main>
+      {% block content %}
+
+      {% endblock%}
+    </main>
+    <footer>
+
+      {%include 'partial/foot.html'%}
+    </footer>
+    
     <!-- JS Bootstap-->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NO.1 Market </title>
-  <link rel="stylesheet" href="{% static 'global.css' %}" > <!-- Link to your CSS file for styling -->
-  <!-- <script src="{%static 'js/main.js'%}"></script>
-  <script src="{%static 'js/inner.js'%}"></script>
-  <script src="{%static 'js/slider.js'%}"></script>
-
-</head>
-
-
-<body>
-  <header>
-    <div class="logo">
-      <img src="{%static 'media/logo.jpg'%}" alt="Logo">
-      <h1>Sports Khudha</h1>
-      <h2>test for gittttt</h2>
-    </div>
-    {%include 'partial/top.html'%}
-    {%include 'partial/nav.html'%}
-
-    <div class="user-actions">
-      <a href="#login">Log In</a> / <a href="#register">Register</a>
-    </div>
-  </header>
-  {%block content%}
-  
-  {%endblock%}
-
-  {%include 'partial/foot.html'%}  -->
-
-<!-- </body>
-</html> -->
-
