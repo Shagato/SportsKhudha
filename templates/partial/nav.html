@@ -1,7 +1,7 @@
 {% load static %}
-<nav class="navbar navbar-expand-md bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="{%static 'images/logo.jpg'%}" class="img-fluid" style= "width: 130px; height: 80px;" alt="logo"></a>
+<nav class="navbar navbar-expand-md bg-body-tertiary" >
+  <div class="container-fluid" style="background-color: rgb(7, 214, 145);">
+    <a class="navbar-brand" href="#"><img src="{%static 'images/logo.jpg'%}" class="img-fluid" style= "width: 100px; height: 80px;" alt="logo" class="d-inline-block align-text-top" > Sports Khudha</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,22 +10,31 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
+        
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Sale%</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Link
+            Catalog
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <ul class="dropdown-menu dropdown">
+            <li><a class="dropdown-item ">Apparel</a></li>
+            <li><hr class="dropdown-divider"> </li>
+            <li><a class="dropdown-item" href="#">Footwear</a></li>
+            <li><hr class="dropdown-divider"> </li>
+            <li><a class="dropdown-item" href="#">Sports Equipment</a></li>
+            <li><hr class="dropdown-divider"> </li>
+            <li><a class="dropdown-item" href="#">Fitness and Training</a></li>
+            <li><hr class="dropdown-divider"> </li>
+            <li><a class="dropdown-item" href="#">Others</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Link</a>
+          <a class="btn btn-primary" style="background-color: rgb(6, 177, 180);" href="#" role="button">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Contact US</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
