@@ -122,7 +122,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR /'C_static '
 STATICFILES_DIRS = [
-    BASE_DIR / 'mystaticfiles'
+    BASE_DIR / 'styles'
 ]
 
 #MEDIA
