@@ -130,4 +130,24 @@
     </div>
   </div>
 
+
+
+<h1>Product Listtttttttttttt</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ea?</p>
+<ul>
+  {% for product in products %}
+      <li>
+          <h2>{{ product.name }}</h2>
+          <p>{{ product.description }}</p>
+          <p>Price: ${{ product.price }}</p>
+          <img src="{{ product.image.url }}" alt="{{ product.name }}">
+          <p>Date Added: {{ product.created_at }}</p>
+      </li>
+  {% endfor %}
+  
+</ul>
+
+<img src="{{product.image.url}}" alt="kkkkkkk">
+<img src="{{ MEDIA_URL }}product_images/{{ product.image }}" alt="lllllll">
+
 {%endblock%}

@@ -1,0 +1,18 @@
+<!-- Products_Lists/templates/Products_Lists/product_list.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Product Listtttttttttttt</h1>
+<ul>
+    {% for product in products %}
+        <li>
+            <h1>{{ product.name }}</h1>
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p>Price: ${{ product.price }}</p>
+            <img src="{{ product.image.urls }}" alt="{{ product.name }}">
+            <p>Date Added: {{ product.created_at }}</p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
