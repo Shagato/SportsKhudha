@@ -60,93 +60,24 @@
 
 
 <!-- Card------------------------------------------------------------>
+
 <div class="container-fluid bg-success m-3 ">
   <H1>ALuu le lo....</H1>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 m-2 ">
+      {% for product in products %}
       <div class="col">
         <div class="card">
-          <img src="{%static 'images/c1.jpg'%}"  class="card-img-top" alt="...">
+          <img src="{{ product.image.url }}"  class="card-img-top" alt="{{ product.name }}">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{product.description}}</p>
+            <H4>${{ product.price }}</H4>
+            <p>Date Added: {{ product.created_at }}</p>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card">
-          <img src="{%static 'images/c3.jpg'%}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="{%static 'images/c5.jpg'%}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="{%static 'images/bat1.jpg'%}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="{%static 'images/Mpant2.jpg'%}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="{%static 'images/boot1.jpg'%}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="{%static 'images/c4.jpg'%}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
-      
-    </div>
+    {%endfor%}
   </div>
-
-
-
-<h1>Product Listtttttttttttt</h1>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ea?</p>
-<ul>
-  {% for product in products %}
-      <li>
-          <h2>{{ product.name }}</h2>
-          <p>{{ product.description }}</p>
-          <p>Price: ${{ product.price }}</p>
-          <img src="{{ product.image.url }}" alt="{{ product.name }}">
-          <p>Date Added: {{ product.created_at }}</p>
-      </li>
-  {% endfor %}
-  
-</ul>
-
-<img src="{{product.image.url}}" alt="kkkkkkk">
+</div> 
 
 {%endblock%}

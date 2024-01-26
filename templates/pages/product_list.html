@@ -3,6 +3,12 @@
 {% load static %}
 {% block content %}
 <h1>Product Listtttttttttttt</h1>
+<img src="{%static 'images/bat1.jpg'%}" alt="static">
+
+<div class="container-fluid bg-primary text-white p-5">
+    <h1>Bootstrap Background Color Example</h1>
+    <p>This is a sample text with a Bootstrap background color.</p>
+</div>
 <ul>
     {% for product in products %}
         <li>

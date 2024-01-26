@@ -22,7 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-_4!gk#w5ix14!6v!se3n2r77t1=(%djkam=yhdnd0-e-+s-tk&'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run with debug turned on in production! 
+# Debug true ei rakh... r joto static media er dorkar sob styles folder e rakh
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -128,9 +129,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR /'C_static '
+STATIC_ROOT = os.path.join(BASE_DIR, 'C_static')
 STATICFILES_DIRS = [
     BASE_DIR / 'styles'
+]
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
 #MEDIA
