@@ -4,7 +4,10 @@
 {% block content %}
 
 <!-- Carousel ------------------------------------------------------------------>
-
+<i class="fa-solid fa-ghost"></i>
+<i class="fa-regular fa-face-smile"></i>
+<i class="fa-solid fa-house"></i>
+<i class="fa-solid fa-house"></i>
 <div id="carouselExampleInterval" class="carousel slide bg-warning-subtle m-3" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="2000">
@@ -63,16 +66,19 @@
 
 <div class="container-fluid bg-success m-3 ">
   <H1>ALuu le lo....</H1>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 m-2 ">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 m-2 r ">
       {% for product in products %}
       <div class="col">
-        <div class="card">
-          <img src="{{ product.image.url }}"  class="card-img-top" alt="{{ product.name }}">
+        <div class="card rounded-5 h-100">
+          <img src="{{ product.image.url }}"  class="card-img-top" alt="{{ product.name }}" style="height: 350px;" object-fit: cover;>
           <div class="card-body">
             <h5 class="card-title">{{ product.name }}</h5>
             <p class="card-text">{{product.description}}</p>
             <H4>${{ product.price }}</H4>
-            <p>Date Added: {{ product.created_at }}</p>
+            <a href="#" class="btn btn-primary">Buy</a>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">Date Added: {{ product.created_at }}</small>
           </div>
         </div>
       </div>
