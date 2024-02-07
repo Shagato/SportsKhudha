@@ -4,18 +4,14 @@
 {% block content %}
 
 <!-- Carousel ------------------------------------------------------------------>
-<i class="fa-solid fa-ghost"></i>
-<i class="fa-regular fa-face-smile"></i>
-<i class="fa-solid fa-house"></i>
-<i class="fa-solid fa-house"></i>
-<div id="carouselExampleInterval" class="carousel slide bg-warning-subtle m-3" data-bs-ride="carousel">
+<div id="carouselExampleInterval" class="carousel slide m-2" style="background-color:#88e3c9;" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="2000">
         
         <div class="row">
             <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
                <div>
-                <H1> Product 1</H1>
+                <H1> Nike Pro Edition</H1>
                 <P> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, ipsa quidem. Officiis maxime impedit aliquid.</P>
                </div>
             </div>
@@ -28,7 +24,7 @@
         <div class="row">
             <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
                 <div>
-                 <H1> Product 2</H1>
+                 <H1> Sports Collection</H1>
                  <P> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, ipsa quidem. Officiis maxime impedit aliquid.</P>
                 </div>
              </div>
@@ -41,7 +37,7 @@
         <div class="row">
             <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
                 <div>
-                 <H1> Product 3</H1>
+                 <H1> Best Sports Package</H1>
                  <P> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, ipsa quidem. Officiis maxime impedit aliquid.</P>
                 </div>
              </div>
@@ -51,39 +47,46 @@
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" style="margin-top: 500px;" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" style="background-color: rgba(77, 2, 2, 0.596)5%, 15%, 0.596;" aria-hidden="true"></span>
+    <button class="carousel-control-prev" style="margin-top: 350px;" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" style="background-color: #2d718c" aria-hidden="True"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next " style="margin-top: 500px;" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-      <span class="carousel-control-next-icon" style="background-color: rgba(77, 2, 2, 0.596)5%, 15%, 0.596;" aria-hidden="true"></span>
+    <button class="carousel-control-next " style="margin-top: 350px;" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" style="background-color: #2d718c;" aria-hidden="true"></span>
       <span class="visually-hidden ">Next</span>
     </button>
   </div>
 
 
 <!-- Card------------------------------------------------------------>
+<div class="container-fluid rounded-5 p-3 " style="background-color: #6aa997;">
+  <h1>New Arrivals</h1>
+  <div class="row row-cols-1 rounded-3 row-cols-md-2 row-cols-lg-4 g-4 m-2">
+    {% for product in products %}
+      {% if forloop.counter <= 8 %}
+        <div class="col">
+          <div class="card rounded-3 h-100 p-2" style="background-color:  #6aa997;">
+            
+            <img src="{{ product.image.url }}" class="card-img-top rounded-3" alt="{{ product.name }}" style="height: 350px; object-fit: cover;">
+            
+            <h5 class="card-title p-2">{{ product.name }}</h5>
+            
+            <div class="card-body" style="max-height: 160px; overflow-y: auto; background-color: #88e3c9;">
+              <p class="card-text " >{{ product.description }}</p>
+            </div>
 
-<div class="container-fluid bg-success m-3 ">
-  <H1>ALuu le lo....</H1>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 m-2 r ">
-      {% for product in products %}
-      <div class="col">
-        <div class="card rounded-5 h-100">
-          <img src="{{ product.image.url }}"  class="card-img-top" alt="{{ product.name }}" style="height: 350px;" object-fit: cover;>
-          <div class="card-body">
-            <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">{{product.description}}</p>
-            <H4>${{ product.price }}</H4>
-            <a href="#" class="btn btn-primary">Buy</a>
-          </div>
-          <div class="card-footer">
-            <small class="text-body-secondary">Date Added: {{ product.created_at }}</small>
+            <h3 class="p-3" style="background-color: #88e3c9;">${{ product.price }}</h3>
+
+            <a href="#" class="btn btn-primary rounded-3" style="background-color:  #2d718c;">Buy</a>
+            <div class="card-footer m-1" style="background-color: #88e3c9;">
+              <small class="text-body-secondary ">Date Added: {{ product.created_at }}</small>
+            </div>
           </div>
         </div>
-      </div>
-    {%endfor%}
+      {% endif %}
+    {% endfor %}
   </div>
-</div> 
+</div>
 
 {%endblock%}
+

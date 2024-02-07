@@ -41,9 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    # 'Product_Lists.apps.ProductListsConfig',
+    # 'product_Lists.apps.Product_ListsConfig',
     'Product_Lists',
-    'Listsss',
 ]
 
 MIDDLEWARE = [

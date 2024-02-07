@@ -1,25 +1,36 @@
 {% load static %}
-<nav class="navbar navbar-expand-md bg-body-tertiary " >
-  <div class="container-fluid" style="background-color: rgb(7, 214, 145);">
-    <a class="navbar-brand" href="#"><img src="{%static 'images/logo.jpg'%}" class="img-fluid" style= "width: 100px; height: 80px;" alt="logo" class="d-inline-block align-text-top" > Sports Khudha</a>
+<nav class="navbar navbar-expand-md bg-body-tertiary" >
+  <div class="container-fluid" style="background-color: #6aa997; ;">
+
+
+    <a class="navbar-brand" href="#"><img src="{%static 'images/logo.jpg'%}" class="img-fluid" style= "width: 100px; height: 80px;" alt="logo" class="d-inline-block align-text-top" >Sports Khudha</a>
+    
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse text-center" id="navbarScroll">
-      <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll text-center " style="--bs-scroll-height: 100px;">
+
+    <div class="collapse navbar-collapse text-center p-2" id="navbarScroll">
+
+      <button id="closeBtn" class="close d-md-none" aria-label="Close" style="width: 30px; height: 30px; background-color: transparent ; position: absolute; top: 90px; right: 30px;">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll text-center " style="--bs-scroll-height: 100px;">   
+        
         <li class="nav-item">
-          <a class="nav-link active fa-solid fa-house" aria-current="page" href="#"></a>
+          <a class="nav-link active fa-solid fa-house" aria-current="page" href="#"> Home</a>
           
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="#">Sale%</a>
+          <a class="nav-link fa-solid" href="#">Sale%</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item fa-solid dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Catalog
+            Catalogue
           </a>
-          <ul class="dropdown-menu dropdown">
+          <ul class="dropdown-menu dropdown" style="background-color: #43baa4;">
             <li><a class="dropdown-item ">Apparel</a></li>
             <li><hr class="dropdown-divider"> </li>
             <li><a class="dropdown-item" href="#">Footwear</a></li>
@@ -31,18 +42,24 @@
             <li><a class="dropdown-item" href="#">Others</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="btn btn-primary" style="background-color: rgb(6, 177, 180);" href="#" role="button">Login</a>
+        <li class="nav-item fa-solid">
+          <a class="btn fa-solid fa-user-plus" style="background-color: #2d718c ;" href="#" role="button"> Login</a>
+          
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Contact US</a>
-        </li>
+        
       </ul>
-      <form class="d-flex" role="search">
+
+      <form class="d-flex p-2" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="submit" style="background-color: #2d718c; color:azure" >Search</button>
       </form>
     </div>
   </div>
 </nav>
+
+  
+
+
+
+  
 

@@ -2,25 +2,46 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1>Product Listtttttttttttt</h1>
-<img src="{%static 'images/bat1.jpg'%}" alt="static">
+<h1 class="allign-center">Product Listtttttttttttt</h1>
 
-<div class="container-fluid bg-primary text-white p-5">
-    <h1>Bootstrap Background Color Example</h1>
-    <p>This is a sample text with a Bootstrap background color.</p>
+  
+<div>
+    {% for product in products%}
+    {% if forloop.counter <= 3 %}
+        <div class="card text-bg-dark g-3 mx-auto p-2 rounded m-4" style="width: 900px; height: 400px;">
+            <img src="{{ product.image.url }}" class="card-img" alt="{{ product.name }}" style="height: 400px;" object-fit: cover;>
+            <div class="card-img-overlay">
+            <h5 class="card-title text-success">{{ product.name }}</h5>
+            <p class="card-text text-success">{{ product.description }}</p>
+            <p class="card-text text-success" style="background-color: chartreuse;"><small>{{ product.created_at }}</small></p>
+            <button type="button" class="btn btn-outline-success">Order Now</button>
+            </div>
+        </div>
+    {%endif%}
+    {%endfor%}
 </div>
-<ul>
-    {% for product in products %}
-        <li>
-            <h1>{{ product.name }}</h1>
-            <h2>{{ product.name }}</h2>
-            <p>{{ product.description }}</p>
-            <p>Price: ${{ product.price }}</p>
-            <img src="{{ product.image.url }}" alt="{{ product.name }}">
-            <img src="{{ product.image.url }}" alt="{{ product.name }}">
 
-            <p>Date Added: {{ product.created_at }}</p>
-        </li>
+<H1 style="color: brown;" > Test</H1>
+<div>
+    {% for product in products %}
+        {% if forloop.counter <= 3 %}
+            <div class="card text-dark bg-light mb-3" style="max-width: 900px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="{{ product.name }}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.description }}</p>
+                            <p class="card-text"><small class="text-muted">{{ product.created_at }}</small></p>
+                            <button type="button" class="btn btn-success">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
     {% endfor %}
-</ul>
+</div>
+
 {% endblock %}
