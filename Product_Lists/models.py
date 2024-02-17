@@ -10,3 +10,11 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class UpComingProducts(models.Model):
+    name = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='product_images/upcoming/')
+
+    def __str__(self):
+        return self.name

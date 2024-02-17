@@ -8,13 +8,20 @@
     <!-- CSS BootStrap -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'FavIcon/css/all.css' %}"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
     <!-- ........Under is my profile link of my fontawesome website..... -->
     <!-- <script src="https://kit.fontawesome.com/3a88653956.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/countdownclock.css' %}">
+
+    
+
+
+
     <title>Sports Khudha</title>
 
 </head>
 
-<body>
+<body style="background-color:#bbffecf3;">
     <Header>
       {%include 'partial/nav.html'%}
     </Header>
@@ -31,6 +38,7 @@
     <footer>
 
       {%include 'partial/foot.html'%}
+      {%include 'partial/top.html'%}
 
     </footer>
     
@@ -38,6 +46,9 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/clock.js' %}"></script>
+    
+    
 
 </body>
 

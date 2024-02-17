@@ -1,0 +1,49 @@
+#countdownClock {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(to bottom right, #58a4e6, #01417e);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #f70000;
+  font-size: 2rem;
+  color: #fff;
+}
+
+#countdownClock h2 {
+  font-size: 24px;
+}
+
+#countdownTimer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.countdown-item {
+  text-align: center;
+}
+
+.countdown-number {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.countdown-label {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.btn {
+  background-color: #2d718c; 
+  color:#b9f4e4;
+  border: none;
+  box-shadow: 0 0 20px rgba(24, 23, 23, 0.7);
+}
+
+.btn:hover {
+  background-color: #6aa997; 
+  color: #2d718c;; 
+}
