@@ -17,7 +17,7 @@
                </div>
             </div>
             <div class="col-12 col-md-6 p-5">
-                <img src="{%static 'images/slide1.jpg'%}" class="img-fluid d-block w-100" style= "width: 100px; height: 500px;" alt="...">
+                <img src="{%static 'images/slide1.jpg'%}" class="img-fluid d-block w-100" style= "width: 100px; height: 350px;" alt="...">
             </div>
         </div>
       </div>
@@ -31,7 +31,7 @@
                 </div>
               </div>
             <div class="col-12 col-md-6 p-5">
-                <img src="{%static 'images/slide2.jpeg.jpg'%}" class="img-fluid d-block w-100" style= "width: 100px; height: 500px;" alt="...">
+                <img src="{%static 'images/slide2.jpeg.jpg'%}" class="img-fluid d-block w-100" style= "width: 100px; height: 350px;" alt="...">
             </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
                 </div>
              </div>
             <div class="col-12 col-md-6 p-5">
-                <img src="{%static 'images/slide3.jpeg.jpg'%}" class="img-fluid d-block w-100" style= "width: 100px; height: 500px;" alt="...">
+                <img src="{%static 'images/slide3.jpeg.jpg'%}" class="img-fluid d-block w-100" style= "width: 100px; height: 350px;" alt="...">
             </div>
         </div>
       </div>
@@ -58,6 +58,80 @@
       <span class="visually-hidden ">Next</span>
     </button>
   </div>
+
+
+<!-- Sale -->
+
+<div class="container-fill rounded-5 m-4 p-4" style=" background-color: #6aa997;">
+  <h1>Sale</h1>
+
+  <h2 class="p-3 d-flex justify-content-center " style="color:#f70000;">50% OFF</h2>
+    <!-- Countdown Clock -->
+    <div id="countdownClock" class="text-center ">
+      <h2 class="mb-4 justify-content-center align-items-center" style="font-size: xx-large;"> Offer Till</h2>
+
+      <div id="countdownTimer" class="row justify-content-center align-items-center" style="font-size: x-large; ">
+        <div class="col-auto">
+          <div class="countdown-item">
+            <span id="days" class="countdown-number"></span>
+            <span class="countdown-label" style="">Days</span>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="countdown-item">
+            <span id="hours" class="countdown-number"></span>
+            <span class="countdown-label">Hours</span>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="countdown-item">
+            <span id="minutes" class="countdown-number"></span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="countdown-item">
+            <span id="seconds" class="countdown-number"></span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="p-3 row justify-content-center align-items-center" >
+    <button type="button" class="btn btnn btn-lg rounded-pill shadow " style="width: 40%;">Shop Now</button>
+  </div>
+  
+
+  <div class="row">
+    <div class="row ">
+      <div class="card text-bg-dark" style="width: 100%;" >
+        <img src="{% static 'images/sale.jpg' %}" class="card-img img-fluid" alt="...">
+
+        <div class=" card-img-overlay  flex-column " style="overflow-y:scroll">
+
+          
+          <div class="col-12 col-sm-4 p-5 m-2 rounded-5 align-items-center justify-content-center" style="width: 60%; background-color:#2d718c;">
+            <div class="d-flex">
+                <div>
+                    <h1 class="card-title" style="color:#f70000;">50% OFF</h1>
+                    <h1>:::::::::</h1>
+                    <h3>Limited Time Offer</h3>
+                    <p class="card-text text-lg">Buy Exciting Products in a Limited Time %SALE%. Lorem ipsum dolor sit amet </p>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
 
 
 <!-- Card New Arrivals------------------------------------------------------------>
@@ -91,126 +165,56 @@
 </div>
 
 
-<!-- Sale -->
 
-<div class="container-fill rounded-5 m-4 p-4" style=" background-color: #6aa997;">
-  <h1>Sale</h1>
-    <!-- Countdown Clock -->
-    <div id="countdownClock" class="text-center ">
-      <h2 class="mb-4 justify-content-center align-items-center" style="font-size: xx-large;">OFFER TILL</h2>
-
-      <div id="countdownTimer" class="row justify-content-center align-items-center" style="font-size: x-large; ">
-        <div class="col-auto">
-          <div class="countdown-item">
-            <span id="days" class="countdown-number"></span>
-            <span class="countdown-label" style="">Days</span>
-          </div>
-        </div>
-        <div class="col-auto">
-          <div class="countdown-item">
-            <span id="hours" class="countdown-number"></span>
-            <span class="countdown-label">Hours</span>
-          </div>
-        </div>
-        <div class="col-auto">
-          <div class="countdown-item">
-            <span id="minutes" class="countdown-number"></span>
-            <span class="countdown-label">Minutes</span>
-          </div>
-        </div>
-        <div class="col-auto">
-          <div class="countdown-item">
-            <span id="seconds" class="countdown-number"></span>
-            <span class="countdown-label">Seconds</span>
-          </div>
-        </div>
-      </div>
-  </div>
-
-  <div class="p-3 row justify-content-center align-items-center" >
-    <button type="button" class="btn btnn btn-lg rounded-pill shadow " style="width: 40%;">Shop Now</button></div>
-  
-
-  <div class="row">
-    <div class="row ">
-      <div class="card text-bg-dark" style="width: 100%;" >
-        <img src="{% static 'images/sale.jpg' %}" class="card-img img-fluid" alt="...">
-
-        <div class=" card-img-overlay  flex-column " style="overflow-y:scroll">
-
-          <div class="col-12 col-sm-6 p-2 m-2 rounded align-items-center justify-content-center" style="width: 60%; background-color:#2d718c;">
-            <div class="d-flex">
-                <div>
-                    <h1 class="card-title" style="color:#f70000;">50% OFF</h1>
-                    <h1>:::::::::</h1>
-                    <h3>Limited Time Offer</h3>
-                </div>
-                <div>
-                    <p class="card-text text-lg">Buy Exciting Products in a Limited Time %SALE%. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, asperiores.</p>
-                </div>
-            </div>
-        </div>
-        
-        
-        
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
 
 
 
 
 <!-- Coming Soon -->
 
-<div class="container-fill rounded-5 p-4 m-5" style="background-color: #6aa997; height:450px;">
+<div class="container-fill rounded-5 p-4 m-5" style="background-color: #6aa997; min-height: 450px;">
+  <h2>Coming Soon</h2>
 
-  <div>
-    <H2>Coming Soon </H2>
-
-    <div class="container">
-
-      
+  <div class="container">
       <div id="productsCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            {% for product in upcoming_products %}
-            <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                <div class="row">
-                    <div class="col">
-                        <div class="rounded-circle image-container" style="border-radius: 50%; overflow: hidden; height: 200px;">
-                            <img src="{{ upcoming_products.0.image.url }}" class="d-block img-fluid" alt="{{ upcoming_products.0.name }}">
+          <div class="carousel-inner">
+              {% for product in upcoming_products %}
+              <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                  <div class="row">
+                      <div class="col-md-4">
+                          <div class="rounded-circle image-container" style="border-radius: 50%; overflow: hidden; height: auto;">
+                              <img src="{{ upcoming_products.0.image.url }}" class="d-block img-fluid" alt="{{ upcoming_products.0.name }}">
+                          </div>
+                          <div class="d-flex justify-content-center align-items-center" style="background-color: #9bd9c7; color: #2d718c;">
+                            <h5>{{ upcoming_products.0.name }}</h5>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="rounded-circle image-container" style="border-radius: 50%; overflow: hidden; height: 300px;">
-                            <img src="{{ upcoming_products.1.image.url }}" class="d-block img-fluid" alt="{{ upcoming_products.1.name }}">
+                      </div>
+                      <div class="col-md-4">
+                          <div class="rounded-circle image-container" style="border-radius: 50%; overflow: hidden; height: auto;">
+                              <img src="{{ product.image.url }}" class="d-block img-fluid" alt="{{ product.name }}">
+                          </div>
+                          <div class="d-flex justify-content-center align-items-center" style="background-color: #9bd9c7; color: #2d718c;">
+                            <h5>{{ product.name }}</h5>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="rounded-circle image-container" style="border-radius: 50%; overflow: hidden; height: 200px;">
-                            <img src="{{ upcoming_products.2.image.url }}" class="d-block img-fluid" alt="{{ upcoming_products.2.name }}">
+                      </div>
+                      <div class="col-md-4">
+                          <div class="rounded-circle image-container" style="border-radius: 50%; overflow: hidden; height: auto;">
+                              <img src="{{ upcoming_products.2.image.url }}" class="d-block img-fluid" alt="{{ upcoming_products.2.name }}">
+                          </div>
+                          <div class="d-flex justify-content-center align-items-center" style="background-color: #9bd9c7; color: #2d718c;">
+                            <h5>{{ upcoming_products.2.name }}</h5>
                         </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center align-items-center" style="background-color: #9bd9c7; color: #2d718c;width:auto;">
-                    <h5>{{ product.name }}</h5>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    
-
-    </div>
-
-
+                      </div>
+                  </div>
+                  
+              </div>
+              {% endfor %}
+          </div>
+      </div>
   </div>
+</div>
 
 
-
-  </div>
 
 
 
