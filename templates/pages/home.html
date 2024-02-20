@@ -4,14 +4,17 @@
 {% block content %}
 <body >
 <!-- Carousel ------------------------------------------------------------------>
-<div id="carouselExampleInterval" class="carousel slide m-4 p-4 rounded-3" style="background-color:#88e3c9;" data-bs-ride="carousel">
+<div id="carouselExampleInterval" class="carousel slide rounded-5" data-bs-ride="carousel">
+  <div class="backstretch position-relative" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: auto; width: 100%; z-index: -999998; position: absolute;">
+    <img src="{%static 'images/bgi2.jpg'%}" style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1440px; height: 960.684px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -179.842px;" width="1403" height="970">
+
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="2000">
         
         <div class="row">
 
             <div class="col-12 col-md-6 d-flex justify-content-center align-items-center ">
-               <div class="p-5">
+               <div class="p-5" style="color: #bbffecf3">
                 <H1> Nike Pro Edition</H1>
                 <P> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, ipsa quidem. Officiis maxime impedit aliquid.</P>
                </div>
@@ -25,7 +28,7 @@
       <div class="carousel-item" data-bs-interval="2000">
         <div class="row">
             <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                <div class="p-5">
+                <div class="p-5" style="color: #bbffecf3;">
                  <H1> Sports Collection</H1>
                  <P> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, ipsa quidem. Officiis maxime impedit aliquid.</P>
                 </div>
@@ -38,7 +41,7 @@
       <div class="carousel-item" data-bs-interval="2000">
         <div class="row">
             <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-              <div class="p-5">
+              <div class="p-5" style="color: #bbffecf3;">
                  <H1> Best Sports Package</H1>
                  <P> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, ipsa quidem. Officiis maxime impedit aliquid.</P>
                 </div>
@@ -58,14 +61,17 @@
       <span class="visually-hidden ">Next</span>
     </button>
   </div>
+  </div>
+ 
+  
 
 
 <!-- Sale -->
+<h2 class=" m-5 d-flex justify-content-center align-items-center" style="color: #2d718c;">.....% SALE %.....</h2>
 
-<div class="container-fill rounded-5 m-4 p-4" style=" background-color: #6aa997;">
-  <h1>Sale</h1>
+<div class="container-fill rounded-5 m-5 p-4" style=" background-color: #6aa997;">
 
-  <h2 class="p-3 d-flex justify-content-center " style="color:#f70000;">50% OFF</h2>
+  <h2 class="p-3 d-flex justify-content-center ~" style="color:#f70000;">50% OFF</h2>
     <!-- Countdown Clock -->
     <div id="countdownClock" class="text-center ">
       <h2 class="mb-4 justify-content-center align-items-center" style="font-size: xx-large;"> Offer Till</h2>
@@ -74,7 +80,7 @@
         <div class="col-auto">
           <div class="countdown-item">
             <span id="days" class="countdown-number"></span>
-            <span class="countdown-label" style="">Days</span>
+            <span class="countdown-label" >Days</span>
           </div>
         </div>
         <div class="col-auto">
@@ -111,7 +117,7 @@
         <div class=" card-img-overlay  flex-column " style="overflow-y:scroll">
 
           
-          <div class="col-12 col-sm-4 p-5 m-2 rounded-5 align-items-center justify-content-center" style="width: 60%; background-color:#2d718c;">
+          <div class="col-12 col-sm-4 p-3 m-2 rounded-5 align-items-center justify-content-center" style="width: 60%; background-color:#2d718c;">
             <div class="d-flex">
                 <div>
                     <h1 class="card-title" style="color:#f70000;">50% OFF</h1>
@@ -135,8 +141,10 @@
 
 
 <!-- Card New Arrivals------------------------------------------------------------>
+
+<h2 class=" m-5 d-flex justify-content-center align-items-center" style="color: #2d718c;">.....New Arrivals.....</h2>
+
 <div class="container-fill rounded-5 p-4 m-3  " style="background-color: #6aa997;">
-  <h1>New Arrivals</h1>
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4  rounded-3 g-4 m-2">
     {% for product in products %}
       {% if forloop.counter <= 8 %}
@@ -172,8 +180,9 @@
 
 <!-- Coming Soon -->
 
+<h2 class=" m-5 d-flex justify-content-center align-items-center" style="color: #2d718c;">.....Coming Soon.....</h2>
+
 <div class="container-fill rounded-5 p-4 m-5" style="background-color: #6aa997; min-height: 450px;">
-  <h2>Coming Soon</h2>
 
   <div class="container">
       <div id="productsCarousel" class="carousel slide" data-bs-ride="carousel">
