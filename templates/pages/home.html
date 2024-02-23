@@ -5,9 +5,7 @@
 <body >
 <!-- Carousel ------------------------------------------------------------------>
 <div id="carouselExampleInterval" class="carousel slide rounded-5" data-bs-ride="carousel">
-  <div class="backstretch position-relative" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: auto; width: 100%; z-index: -999998; position: absolute;">
-    <img src="{%static 'images/bgi2.jpg'%}" style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1440px; height: 960.684px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -179.842px;" width="1403" height="970">
-
+    <div style="background-image:url({%static 'images/bgi2.jpg'%}); background-size: cover;">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="2000">
         
@@ -68,10 +66,10 @@
 
 <!-- Sale -->
 <h2 class=" m-5 d-flex justify-content-center align-items-center" style="color: #2d718c;">.....% SALE %.....</h2>
+<div class="container-fill rounded-5 p-4 m-3  " style="background-color: #6aa997;">
+<div class="container-fill rounded-5">
 
-<div class="container-fill rounded-5 m-5 p-4" style=" background-color: #6aa997;">
-
-  <h2 class="p-3 d-flex justify-content-center ~" style="color:#f70000;">50% OFF</h2>
+    <h2 class="p-3 d-flex justify-content-center ~" style="color:#f70000;">50% OFF</h2>
     <!-- Countdown Clock -->
     <div id="countdownClock" class="text-center ">
       <h2 class="mb-4 justify-content-center align-items-center" style="font-size: xx-large;"> Offer Till</h2>
@@ -107,34 +105,19 @@
   <div class="p-3 row justify-content-center align-items-center" >
     <button type="button" class="btn btnn btn-lg rounded-pill shadow " style="width: 40%;">Shop Now</button>
   </div>
-  
 
-  <div class="row">
-    <div class="row ">
-      <div class="card text-bg-dark" style="width: 100%;" >
-        <img src="{% static 'images/sale.jpg' %}" class="card-img img-fluid" alt="...">
-
-        <div class=" card-img-overlay  flex-column " style="overflow-y:scroll">
-
-          
-          <div class="col-12 col-sm-4 p-3 m-2 rounded-5 align-items-center justify-content-center" style="width: 60%; background-color:#2d718c;">
-            <div class="d-flex">
-                <div>
-                    <h1 class="card-title" style="color:#f70000;">50% OFF</h1>
-                    <h1>:::::::::</h1>
-                    <h3>Limited Time Offer</h3>
-                    <p class="card-text text-lg">Buy Exciting Products in a Limited Time %SALE%. Lorem ipsum dolor sit amet </p>
-                </div>
-                
-            </div>
+  <div class="row rounded-5  align-items-center justify-content-center" style="width: 60%; ">
+    <div class="d-flex">
+        <div>
+            <h1 class="card-title" style="color:#f70000;">50% OFF</h1>
+            <h1>:::::::::</h1>
+            <h3>Limited Time Offer</h3>
+            <p class="card-text text-lg">Buy Exciting Products in a Limited Time %SALE%. Lorem ipsum dolor sit amet </p>
         </div>
         
-        
-        
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+</div>
 
 
 </div>
