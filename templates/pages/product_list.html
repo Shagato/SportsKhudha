@@ -1,47 +1,82 @@
-<!-- Products_Lists/templates/Products_Lists/product_list.html -->
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
-<h1 class="allign-center">Product Listtttttttttttt</h1>
 
-  
-<div>
-    {% for product in products%}
-    {% if forloop.counter <= 3 %}
-        <div class="card text-bg-dark g-3 mx-auto p-2 rounded m-4" style="width: 900px; height: 400px;">
-            <img src="{{ product.image.url }}" class="card-img" alt="{{ product.name }}" style="height: 400px;" object-fit: cover;>
-            <div class="card-img-overlay">
-            <h5 class="card-title text-success">{{ product.name }}</h5>
-            <p class="card-text text-success">{{ product.description }}</p>
-            <p class="card-text text-success" style="background-color: chartreuse;"><small>{{ product.created_at }}</small></p>
-            <button type="button" class="btn btn-outline-success">Order Now</button>
-            </div>
-        </div>
-    {%endif%}
-    {%endfor%}
+
+<h2 class="m-5 d-flex justify-content-center align-items-center" style="color: #2d718c;">New Arrivals</h2>
+
+<!-- Filter buttons -->
+<div class="container mb-4">
+  <div class="btn-group" role="group" aria-label="Filter products">
+      <button type="button" class="btn btn-secondary filter-button" data-filter="all">All</button>
+      {% for category in categories %}
+          <button type="button" class="btn btn-secondary filter-button" data-filter="{{ category.name }}">{{ category.name }}</button>
+      {% endfor %}
+  </div>
 </div>
 
-<H1 style="color: brown;" > Test</H1>
-<div>
-    {% for product in products %}
-        {% if forloop.counter <= 3 %}
-            <div class="card text-dark bg-light mb-3" style="max-width: 900px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="{{ product.name }}">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ product.name }}</h5>
-                            <p class="card-text">{{ product.description }}</p>
-                            <p class="card-text"><small class="text-muted">{{ product.created_at }}</small></p>
-                            <button type="button" class="btn btn-success">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% endif %}
+<!-- Price Filter -->
+<form method="GET" action="{% url 'product_list' %}" class="m-4">
+  <label for="min_price">Min Price:</label>
+  <input type="text" name="min_price" id="min_price" value="{{ request.GET.min_price }}">
+  <label for="max_price">Max Price:</label>
+  <input type="text" name="max_price" id="max_price" value="{{ request.GET.max_price }}">
+  <button type="submit">Filter</button>
+</form>
+
+<!-- Product cards -->
+<div class="container-fill rounded-5 p-4 m-3" style="background-color: #6aa997;">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 rounded-3 g-4 m-2" id="product-list">
+      {% for product in page_obj %}
+          <div class="col filter {% for category in product.categories.all %}category-{{ category.name }} {% endfor %}">
+              <div class="card rounded-3 h-100 p-2" style="background-color: #88e3c9;">
+                  <img src="{{ product.image.url }}" class="card-img-top rounded-3" alt="{{ product.name }}" style="height: 350px; object-fit: cover;">
+                  <h5 class="card-title p-2">{{ product.name }}</h5>
+                  <div class="card-body" style="max-height: 160px; overflow-y: auto; background-color: #9bd9c7;">
+                      <p class="card-text">{{ product.description }}</p>
+                  </div>
+                  <h3 class="p-3" style="background-color: #88e3c9;">${{ product.price }}</h3>
+                  <a href="#" class="btn btnn rounded-pillow shadow">Add To Cart</a>
+                  <div class="card-footer m-1" style="background-color: #88e3c9;"> 
+                      <small class="text-body-secondary">Date Added: {{ product.created_at }}</small>
+                  </div>
+              </div>
+          </div>
+      {% endfor %}
+  </div>
+</div>
+
+<!-- Pagination -->
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page=1" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+    {% endif %}
+    {% for i in page_obj.paginator.page_range %}
+      <li class="page-item {% if page_obj.number == i %}active{% endif %}">
+        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+      </li>
     {% endfor %}
-</div>
+    {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+
+
+
+
+
+
+<!-- test -->
 
 {% endblock %}

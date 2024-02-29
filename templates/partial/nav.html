@@ -3,7 +3,7 @@
   <div class="container-fluid fa-solid" style="background-color: #6aa997; ;">
 
 
-    <a class="navbar-brand" href="#"><img src="{%static 'images/logo.jpg'%}" class="img-fluid rounded-5" style= "width: 100px; height: 80px;" alt="logo" class="d-inline-block align-text-top" >Sports Khudha</a>
+    <a class="navbar-brand" href="{% url 'home' %}"><img src="{%static 'images/logo.jpg'%}" class="img-fluid rounded-5" style= "width: 100px; height: 80px;" alt="logo" class="d-inline-block align-text-top" >Sports Khudha</a>
     
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,19 +19,19 @@
       <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll text-center " style="--bs-scroll-height: 100px;">   
         
         <li class="nav-item">
-          <a class="nav-link active fa-solid fa-house" aria-current="page" href="#"> Home</a>
+          <a class="nav-link active fa-solid fa-house" aria-current="page" href="{% url 'home' %}"> Home</a>
           
         </li>
         
         <li class="nav-item">
-          <a class="nav-link fa-solid" href="#">Sale%</a>
+          <a class="nav-link fa-solid fa-cart-shopping" href="#"> My Cart</a>
         </li>
         <li class="nav-item fa-solid dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Catalogue
           </a>
           <ul class="dropdown-menu dropdown" style="background-color:#6aa997;">
-            <li><a class="dropdown-item ">Apparel</a></li>
+            <li><a class="dropdown-item ">Cloths</a></li>
             <li><hr class="dropdown-divider"> </li>
             <li><a class="dropdown-item" href="#">Footwear</a></li>
             <li><hr class="dropdown-divider"> </li>
