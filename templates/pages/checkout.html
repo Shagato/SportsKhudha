@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row">
     <div class="col-lg-6 ">
-        <div class="box-element m-2 p-2 custom-shadow" id="form-wrapper">
+        <div class="box-element mt-4 m-2 p-2 custom-shadow" id="form-wrapper">
             <form id="form">
                 <div id="user-info">
                     <div class="form-group">
@@ -41,14 +41,11 @@
         </div>
 
         <br>
-        <div class="box-element hidden" id="payment-info">
-            <small>Paypal Options</small>
-        </div>
 
     </div>
 
     <div class="col-lg-6 ">
-        <div class="box-element m-2 p-2 custom-shadow " id="form-wrapper">
+        <div class="box-element mt-4 m-2 p-2 custom-shadow " id="form-wrapper">
             <a class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
             <hr>
             <h3>Order Summary</h3>
@@ -78,5 +75,26 @@
 		
         </div>
     </div>
+	<div class="container m-3 p-2">
+		<div class="row justify-content-center">
+			<div class="col-lg-8">
+				<div class="custom-shadow">
+					<div>
+						<h3 class="text-center">Payment Options</h3>
+						<hr>
+						<ul class="text-center list-group"   >
+							<li class="list-group-item">bkash</li>
+							<li class="list-group-item">Rocket</li>
+							<li class="list-group-item">Nagad</li>
+							<li class="list-group-item">Upay</li>
+							<li class="list-group-item">Bank Account</li>
+							<li class="list-group-item">Other Methods</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 </div>
 {% endblock content %}
