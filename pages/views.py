@@ -6,3 +6,10 @@ def home(request):
     upcoming_products = UpComingProducts.objects.all()
     return render(request, 'pages/home.html', {'products': products, 'upcoming_products': upcoming_products})
 
+def  cart(request):
+    context = {}
+    return render(request, 'pages/cart.html', context)
+
+def checkout(request):
+      context = {}
+      return render(request, 'pages/checkout.html', context)

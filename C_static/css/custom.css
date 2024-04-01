@@ -7,5 +7,18 @@
     background-color: #6aa997; 
     color: #2d718c; }
 
+/* nav cart */
 
+#cart-total{
+	text-align: center;
+	color:#6aa997;
+	background-color: #fd0000b0;
+	border-radius: 50%;
+	font-size: 16px;
+}
+
+/* shadow */
+.custom-shadow {
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75); 
+}
   

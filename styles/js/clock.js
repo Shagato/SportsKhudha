@@ -1,7 +1,7 @@
 // Function to update the countdown timer
 function updateCountdown() {
-    // Set the release date and time (replace with your desired release date)
-    const releaseDate = new Date('2024-08-15T00:00:00');
+    // Set the release date and time 
+    const releaseDate = new Date('2025-02-25T00:00:00');
     const currentDate = new Date();
   
     // Calculate the time difference between the current date and release date

@@ -23,9 +23,12 @@
           
         </li>
         
-        <li class="nav-item">
-          <a class="nav-link fa-solid fa-cart-shopping" href="#"> My Cart</a>
+        <li class="nav-item form-inline my-2 my-lg-0">
+          <a href="{% url 'cart' %}" id="cart-icon" class="d-inline-block nav-link fa-solid fa-cart-shopping">Cart</a>
+          <span id="cart-total" class="badge badge-pill badge-primary ml-1 align-self-start">7</span>
         </li>
+
+
         <li class="nav-item fa-solid dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Catalogue
@@ -43,7 +46,7 @@
           </ul>
         </li>
         <li class="nav-item fa-solid">
-          <a class="btn fa-solid fa-user-plus" style="background-color: #2d718c ;" href="#" role="button"> Login</a>
+          <a class="btn btn-outline-dark fa-solid fa-user-plus" href="#" role="button"> Login</a>
           
         </li>
         
@@ -51,7 +54,7 @@
 
       <form class="d-flex p-2" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit" style="background-color: #2d718c; color:azure" >Search</button>
+        <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
   </div>
