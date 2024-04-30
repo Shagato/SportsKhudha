@@ -5,6 +5,7 @@
     <div class="col-lg-6 ">
         <div class="box-element mt-4 m-2 p-2 custom-shadow" id="form-wrapper">
             <form id="form">
+				<H3> Information </H3>
                 <div id="user-info">
                     <div class="form-group">
                         <input required class="form-control" type="text" name="name" placeholder="Name..">
@@ -30,9 +31,7 @@
                     <div class="form-group">
                         <input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
                     </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="country" placeholder="Country..">
-                    </div>
+                    
                 </div>
 
                 <hr>
@@ -61,36 +60,46 @@
 						</tr>
 					</thead>
 					<tbody>
+                        {%for item in items %}
 						<tr class="cart-row">
-							<td><img class="row-image" src="{% static 'images/placeholder.png' %}"></td>
-							<td>Product 1</td>
-							<td>$20.00</td>
-							<td>x2</td>
+							<td><img class="row-image" src="{{item.product.imaeURL}}"></td>
+							<td>{{item.product.name}}</td>
+							<td>${{item.product.price}}</td>
+							<td>x~{{item.quantity}}</td>
 						</tr>
+                        {%endfor%}
 					</tbody>
 				</table>
 			</div>
-			<h5>Items:   2</h5>
-			<h5>Total:   $40.00</h5>
+			<h5>Items:  {{order.get_cart_items}}</h5>
+			<h5>Total:   ${{order.get_cart_total}}</h5>
 		
         </div>
     </div>
-	<div class="container m-3 p-2">
+
+
+	<div class="container m-2 p-2">
 		<div class="row justify-content-center">
 			<div class="col-lg-8">
 				<div class="custom-shadow">
-					<div>
 						<h3 class="text-center">Payment Options</h3>
-						<hr>
+						
 						<ul class="text-center list-group"   >
-							<li class="list-group-item">bkash</li>
-							<li class="list-group-item">Rocket</li>
-							<li class="list-group-item">Nagad</li>
-							<li class="list-group-item">Upay</li>
-							<li class="list-group-item">Bank Account</li>
-							<li class="list-group-item">Other Methods</li>
+
+							<a  href="#"> <li class="list-group-item shag-nav-item-li"> 
+                                <img src="{%static 'images/bkash_logo.png'%}" alt="Image 2" style="width: 50px; height: 30px;"> bkash </li>  </a> 
+
+                                <a  href="#"> <li class="list-group-item shag-nav-item-li">     
+                                <img src="{% static 'images/rocket_logo.png' %}" alt="rocket" class="me-3" style="width: 50px; height: 30px;"> Rocket </li> </a>
+							<a href=" "><li class="list-group-item shag-nav-item-li">
+                                <img src="{% static 'images/nagad_logo.png' %}" alt="nagad" class="me-3" style="width: 50px; height: 30px;" > Nagad </li></a>
+                            <a href=" "><li class="list-group-item shag-nav-item-li">
+                                <img src="{% static 'images/upay_logo.png' %}" alt="upay" class="me-3" style="width: 50px; height: 30px;" > U-Pay </li></a>
+                            <a href=" "><li class="list-group-item shag-nav-item-li">
+                                <img src="{% static 'images/bank_logo.png' %}" alt="bank" class="me-3" style="width: 50px; height: 30px;" > Bank Transfer </li></a>
+                            <a href=" "><li class="list-group-item shag-nav-item-li">
+                                <img src="{% static 'images/cod_logo.png' %}" alt="COD" class="me-3" style="width: 50px; height: 30px;" > Cash On Delivery </li></a>
 						</ul>
-					</div>
 				</div>
 			</div>
 		</div>

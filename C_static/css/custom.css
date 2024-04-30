@@ -7,6 +7,17 @@
     background-color: #6aa997; 
     color: #2d718c; }
 
+/* nav bar item customize */
+.shag-nav-item-li{
+    background-color: #6aa997; 
+    color: #000000; 
+}
+
+.shag-nav-item-li:hover {
+    background-color: #2d718c; 
+    color:#b9f4e4;
+}
+
 /* nav cart */
 
 #cart-total{
@@ -19,6 +30,6 @@
 
 /* shadow */
 .custom-shadow {
-	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75); 
+	box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.75);
 }
   

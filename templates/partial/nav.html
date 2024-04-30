@@ -3,7 +3,12 @@
   <div class="container-fluid fa-solid" style="background-color: #6aa997; ;">
 
 
-    <a class="navbar-brand" href="{% url 'home' %}"><img src="{%static 'images/logo.jpg'%}" class="img-fluid rounded-5" style= "width: 100px; height: 80px;" alt="logo" class="d-inline-block align-text-top" >Sports Khudha</a>
+    <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+      <img src="{% static 'images/logo.jpg' %}" class="img-fluid rounded-5" style="width: 100px; height: 80px;" alt="logo" class="d-inline-block align-text-top">
+      <p class="fa-house mb-0 ms-2 "> Sports Khudha</p> 
+    </a>
+  
+    
     
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,31 +23,26 @@
 
       <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll text-center " style="--bs-scroll-height: 100px;">   
         
-        <li class="nav-item">
-          <a class="nav-link active fa-solid fa-house" aria-current="page" href="{% url 'home' %}"> Home</a>
-          
-        </li>
-        
         <li class="nav-item form-inline my-2 my-lg-0">
           <a href="{% url 'cart' %}" id="cart-icon" class="d-inline-block nav-link fa-solid fa-cart-shopping">Cart</a>
           <span id="cart-total" class="badge badge-pill badge-primary ml-1 align-self-start">7</span>
         </li>
 
 
-        <li class="nav-item fa-solid dropdown">
+        <li class="nav-item fa-solid dropdown ">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Catalogue
           </a>
-          <ul class="dropdown-menu dropdown" style="background-color:#6aa997;">
-            <li><a class="dropdown-item ">Cloths</a></li>
+          <ul class="dropdown-menu dropdown " style="background-color:#6aa997;">
+            <li><a class="dropdown-item shag-nav-item-li" href="#">Cloths</a></li>
+            <li><hr class="dropdown-divider "> </li>
+            <li><a class="dropdown-item shag-nav-item-li" href="#">Footwear</a></li>
             <li><hr class="dropdown-divider"> </li>
-            <li><a class="dropdown-item" href="#">Footwear</a></li>
+            <li><a class="dropdown-item shag-nav-item-li" href="#">Sports Equipment</a></li>
             <li><hr class="dropdown-divider"> </li>
-            <li><a class="dropdown-item" href="#">Sports Equipment</a></li>
+            <li><a class="dropdown-item shag-nav-item-li" href="#">Fitness and Training</a></li>
             <li><hr class="dropdown-divider"> </li>
-            <li><a class="dropdown-item" href="#">Fitness and Training</a></li>
-            <li><hr class="dropdown-divider"> </li>
-            <li><a class="dropdown-item" href="#">Others</a></li>
+            <li><a class="dropdown-item shag-nav-item-li" href="#">Others</a></li>
           </ul>
         </li>
         <li class="nav-item fa-solid">
