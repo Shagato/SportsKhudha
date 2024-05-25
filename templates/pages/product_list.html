@@ -37,7 +37,10 @@
                       <p class="card-text">{{ product.description }}</p>
                   </div>
                   <h3 class="p-3" style="background-color: #88e3c9;">${{ product.price }}</h3>
-                  <a href="#" class="btn btnn rounded-pillow shadow">Add To Cart</a>
+                      
+                  <!-- add cart button -->
+                  <button data-product={{product.id}} data-action="add" class="btn btnn rounded-pillow shadow add-btn update-cart">Add To Cart</button>
+
                   <div class="card-footer m-1" style="background-color: #88e3c9;"> 
                       <small class="text-body-secondary">Date Added: {{ product.created_at }}</small>
                   </div>
