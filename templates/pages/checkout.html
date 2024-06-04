@@ -112,8 +112,9 @@
 </div>
 
 <script type="text/javascript">
-
-    var total = '{{order.get_cart_total|floatformat:2}}'
+    var shipping = '{{order.shipping}}'
+    var total = '{{order.get_cart_total}}'
+    
     var form = document.getElementById('form')
     form.addEventListener('submit', function(e){
         e.preventDefault()
@@ -139,10 +140,27 @@
             'state':form.state.value,
             'zipcode':form.zipcode.value,
         }
- 
-        
+
         console.log('Shipping Info:', shippingInfo)
-	    console.log('User Info:', userFormData)
+        console.log('User Info:', userFormData)
+
+        var url = "/ProductList/process_order/"
+        fetch(url, {
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+                'X-CSRFToken':csrftoken ,
+            }, 
+            body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
+            
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+            alert('Transaction completed');  
+            window.location.href = "{% url 'home' %}"
+        })
     }
 </script>
+
 {% endblock content %}
