@@ -64,6 +64,49 @@
   
 
 
+
+
+
+<!-- Card New Arrivals------------------------------------------------------------>
+
+<h2 class=" m-5 d-flex justify-content-center align-items-center" style="color: #2d718c;">.....New Arrivals.....</h2>
+
+<div class="container-fill rounded-5 p-4 m-3  " style="background-color: #6aa997;">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4  rounded-3 g-4 m-2">
+    {% for product in products %}
+      {% if forloop.counter <= 8 %}
+        <div class="col">
+          <div class="card rounded-3 h-100 p-2" style="background-color: #88e3c9;">
+            
+            <img src="{{ product.image.url }}" class="card-img-top rounded-3" alt="{{ product.name }}" style="height: 350px; object-fit: cover;">
+            
+            <h5 class="card-title p-2">{{ product.name }}</h5>
+            
+            <div class="card-body" style="max-height: 160px; overflow-y: auto; background-color: #9bd9c7;">
+              <p class="card-text " >{{ product.description }}</p>
+            </div>
+
+            <h3 class="p-3" style="background-color: #88e3c9;">${{ product.price }}</h3>
+
+            <button data-product={{product.id}} data-action="add" class="btn btnn rounded-pillow shadow add-btn update-cart">Add To Cart</button>
+
+            <div class="card-footer m-1" style="background-color: #88e3c9;"> 
+              <small class="text-body-secondary ">Date Added: {{ product.created_at }}</small>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+ 
+  </div>
+  <div class="p-3 row justify-content-center align-items-center" >
+    <a href="{% url 'product_list' %}" class="btn btnn btn-lg rounded-pill shadow" style="width: 50%;">See More....</a>
+</div>
+
+</div>
+
+
+
 <!-- Sale -->
 <h2 class=" m-5 d-flex justify-content-center align-items-center" style="color: #2d718c;">.....% SALE %.....</h2>
 <div class="container-fill rounded-5 p-4 m-5  " style="background-color: #6aa997;">
@@ -119,49 +162,6 @@
 
 
 </div>
-
-
-<!-- Card New Arrivals------------------------------------------------------------>
-
-<h2 class=" m-5 d-flex justify-content-center align-items-center" style="color: #2d718c;">.....New Arrivals.....</h2>
-
-<div class="container-fill rounded-5 p-4 m-3  " style="background-color: #6aa997;">
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4  rounded-3 g-4 m-2">
-    {% for product in products %}
-      {% if forloop.counter <= 8 %}
-        <div class="col">
-          <div class="card rounded-3 h-100 p-2" style="background-color: #88e3c9;">
-            
-            <img src="{{ product.image.url }}" class="card-img-top rounded-3" alt="{{ product.name }}" style="height: 350px; object-fit: cover;">
-            
-            <h5 class="card-title p-2">{{ product.name }}</h5>
-            
-            <div class="card-body" style="max-height: 160px; overflow-y: auto; background-color: #9bd9c7;">
-              <p class="card-text " >{{ product.description }}</p>
-            </div>
-
-            <h3 class="p-3" style="background-color: #88e3c9;">${{ product.price }}</h3>
-
-            <button data-product={{product.id}} data-action="add" class="btn btnn rounded-pillow shadow add-btn update-cart">Add To Cart</button>
-
-            <div class="card-footer m-1" style="background-color: #88e3c9;"> 
-              <small class="text-body-secondary ">Date Added: {{ product.created_at }}</small>
-            </div>
-          </div>
-        </div>
-      {% endif %}
-    {% endfor %}
- 
-  </div>
-  <div class="p-3 row justify-content-center align-items-center" >
-    <a href="{% url 'product_list' %}" class="btn btnn btn-lg rounded-pill shadow" style="width: 50%;">See More....</a>
-</div>
-
-</div>
-
-
-
-
 
 
 

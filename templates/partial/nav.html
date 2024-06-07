@@ -1,68 +1,70 @@
 {% load static %}
-<nav class="navbar navbar-expand-md bg-body-tertiary" >
-  <div class="container-fluid fa-solid" style="background-color: #6aa997; ;">
+<nav class="navbar navbar-expand-md bg-body-tertiary">
+    <div class="container-fluid fa-solid" style="background-color: #6aa997;">
 
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+            <img src="{% static 'images/logo.jpg' %}" class="img-fluid rounded-5" style="width: 100px; height: 80px;" alt="logo" class="d-inline-block align-text-top">
+            <p class="fa-house mb-0 ms-2 "> Sports Khudha</p> 
+        </a>
 
-    <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
-      <img src="{% static 'images/logo.jpg' %}" class="img-fluid rounded-5" style="width: 100px; height: 80px;" alt="logo" class="d-inline-block align-text-top">
-      <p class="fa-house mb-0 ms-2 "> Sports Khudha</p> 
-    </a>
-  
-    
-    
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse text-center p-2" id="navbarScroll">
+        <div class="collapse navbar-collapse text-center p-2" id="navbarScroll">
 
-      <button id="closeBtn" class="close d-md-none" aria-label="Close" style="width: 30px; height: 30px; background-color: transparent ; position: absolute; top: 90px; right: 30px;">
-        <span aria-hidden="true">&times;</span>
-      </button>
+            <button id="closeBtn" class="close d-md-none" aria-label="Close" style="width: 30px; height: 30px; background-color: transparent ; position: absolute; top: 90px; right: 30px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
 
-      <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll text-center " style="--bs-scroll-height: 100px;">   
-        
-        <li class="nav-item form-inline my-2 my-lg-0">
-          <a href="{% url 'cart' %}" id="cart-icon" class="d-inline-block nav-link fa-solid fa-cart-shopping">Cart</a>
-          <span id="cart-total" class="badge badge-pill badge-primary ml-1 align-self-start">{{cartItems}}</span>
-        </li>
+            <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll text-center " style="--bs-scroll-height: 100px;">   
 
+                <li class="nav-item form-inline my-2 my-lg-0">
+                    <a href="{% url 'cart' %}" id="cart-icon" class="d-inline-block nav-link fa-solid fa-cart-shopping">Cart</a>
+                    <span id="cart-total" class="badge badge-pill badge-primary ml-1 align-self-start">{{cartItems}}</span>
+                </li>
 
-        <li class="nav-item fa-solid dropdown ">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Catalogue
-          </a>
-          <ul class="dropdown-menu dropdown " style="background-color:#6aa997;">
-            <li><a class="dropdown-item shag-nav-item-li" href="#">Cloths</a></li>
-            <li><hr class="dropdown-divider "> </li>
-            <li><a class="dropdown-item shag-nav-item-li" href="#">Footwear</a></li>
-            <li><hr class="dropdown-divider"> </li>
-            <li><a class="dropdown-item shag-nav-item-li" href="#">Sports Equipment</a></li>
-            <li><hr class="dropdown-divider"> </li>
-            <li><a class="dropdown-item shag-nav-item-li" href="#">Fitness and Training</a></li>
-            <li><hr class="dropdown-divider"> </li>
-            <li><a class="dropdown-item shag-nav-item-li" href="#">Others</a></li>
-          </ul>
-        </li>
-        <li class="nav-item fa-solid">
-          <a class="btn btn-outline-dark fa-solid fa-user-plus" href="#" role="button"> Login</a>
-          
-        </li>
-        
-      </ul>
+                <!-- <li class="nav-item fa-solid dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Catalogue
+                    </a>
+                    <ul class="dropdown-menu dropdown " style="background-color:#6aa997;">
+                        <li><a class="dropdown-item shag-nav-item-li" href="#">Cloths</a></li>
+                        <li><hr class="dropdown-divider "> </li>
+                        <li><a class="dropdown-item shag-nav-item-li" href="#">Footwear</a></li>
+                        <li><hr class="dropdown-divider"> </li>
+                        <li><a class="dropdown-item shag-nav-item-li" href="#">Sports Equipment</a></li>
+                        <li><hr class="dropdown-divider"> </li>
+                        <li><a class="dropdown-item shag-nav-item-li" href="#">Fitness and Training</a></li>
+                        <li><hr class="dropdown-divider"> </li>
+                        <li><a class="dropdown-item shag-nav-item-li" href="#">Others</a></li>
+                    </ul>
+                </li> -->
+                
+                <!-- User Authentication Links -->
+                <ul class="navbar-nav ms-auto">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item fa-solid">
+                            <a class="nav-link btn btn-outline-dark fa-solid  fa-sign-out ms-3" href="{% url 'logout' %}">  Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item fa-solid">
+                            <a class="nav-link btn btn-outline-dark fa-solid fa-sign-in  me-2" href="{% url 'login' %}">  Login</a>
+                        </li>
+                        <li class="nav-item fa-solid">
+                            <a class="nav-link btn btn-outline-dark fa-solid fa-user-plus ms-2" href="{% url 'register' %}">  Register</a>
+                        </li>
+                    {% endif %}
+                </ul>
+                <!-- End User Authentication Links -->
 
-      <form class="d-flex p-2" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+            </ul>
+
+            <form class="d-flex p-2" method="get" action="{% url 'product_search' %}" role="search">
+                <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+
+        </div>
     </div>
-  </div>
 </nav>
-
-  
-
-
-
-  
-

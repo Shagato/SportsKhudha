@@ -1,17 +1,20 @@
 import json
-from django.http import JsonResponse
-from django.shortcuts import render
-from Product_Lists.models import *
-import datetime
+from django.shortcuts import get_object_or_404
+from .models import *
 
-def home(request):
-    products = Product.objects.order_by('-created_at')
-    upcoming_products = UpComingProducts.objects.all()
+def get_or_create_customer(user):
+    if not hasattr(user, 'customer'):
+        customer = Customer.objects.create(user=user, email=user.email)
+    else:
+        customer = user.customer
+    return customer
+
+def get_cart_data(request):
     if request.user.is_authenticated:
-        customer = request.user.customer
+        customer = get_or_create_customer(request.user)
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
         items = order.orderitem_set.all()
-        cartItems = order.get_cart_items
+        cart_items = order.get_cart_items
     else:
         cart_data = get_cart_data_from_session(request)
         items = cart_data['items']
@@ -20,9 +23,8 @@ def home(request):
             'get_cart_items': cart_data['total_cart_items'],
             'shipping': False
         }
-        cartItems = order['get_cart_items']
-    return render(request, 'pages/home.html', {'products': products, 'upcoming_products': upcoming_products,'cartItems':cartItems })
-
+        cart_items = order['get_cart_items']
+    return items, order, cart_items
 
 def get_cart_data_from_session(request):
     cart = json.loads(request.COOKIES.get('cart', '{}'))
@@ -38,7 +40,7 @@ def get_cart_data_from_session(request):
                 'product': product,
                 'quantity': item['quantity'],
                 'get_total': total_price
-            }) 
+            })
             total_cart_items += item['quantity']
             total_cart_price += total_price
         except Product.DoesNotExist:
@@ -49,4 +51,3 @@ def get_cart_data_from_session(request):
         'total_cart_items': total_cart_items,
         'total_cart_price': total_cart_price
     }
-

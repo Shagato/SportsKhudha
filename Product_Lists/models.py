@@ -37,7 +37,7 @@ class Customer(models.Model):
 	email = models.CharField(max_length=200)
 
 	def __str__(self):
-		return self.name
+		return self.name if self.name else str(self.pk)
 
 
 class Order(models.Model):

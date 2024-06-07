@@ -28,7 +28,7 @@
                     </tr>
                     {%for item in items %}
                     <tr class="cart-row">
-                        <td><img class="row-image" src= "{{item.product.imaeURL}}" ></td>
+                        <td><img class="row-image img-fluid"  style="width: 100px; height: 100px;"  src="{{item.product.image.url}}"></td>
                         <td><p>{{item.product.name}}</p></td>
                         <td><p>${{item.product.price}}</p></td> 
                         <td>

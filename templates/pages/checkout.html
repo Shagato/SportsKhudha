@@ -20,14 +20,14 @@
 						</tr>
 					</thead>
 					<tbody>
-                        {%for item in items %}
+                        {% for item in items %}
 						<tr class="cart-row">
-							<td><img class="row-image" src="{{item.product.imaeURL}}"></td>
+							<td><img class="row-image img-fluid"  style="width: 100px; height: 100px;"  src="{{item.product.image.url}}"></td>
 							<td>{{item.product.name}}</td>
 							<td>${{item.product.price}}</td>
 							<td>x{{item.quantity}}</td>
 						</tr>
-                        {%endfor%}
+                        {% endfor %}
 					</tbody>
 				</table>
 			</div>
@@ -40,6 +40,7 @@
     <div class="col-lg-6 ">
         <div class="box-element mt-4 m-2 p-2 custom-shadow" id="form-wrapper">
             <form id="form">
+                {% csrf_token %}
 				<H3> Information </H3>
                 <div id="user-info">
                     <div class="form-group">
@@ -88,21 +89,21 @@
 				<div class="custom-shadow">
 						<h3 class="text-center">Payment Options</h3>
 						
-						<ul class="text-center list-group" id="make-payment"  >
+						<ul class="text-center list-group" id="make-payment">
 
-							<a  href="#"> <li class="list-group-item shag-nav-item-li"> 
-                                <img src="{%static 'images/bkash_logo.png'%}" alt="Image 2" style="width: 50px; height: 30px;"> bkash </li>  </a> 
+							<a href="#"><li class="list-group-item shag-nav-item-li"> 
+                                <img src="{% static 'images/bkash_logo.png' %}" alt="Image 2" style="width: 50px; height: 30px;"> bkash </li></a> 
 
-                                <a  href="#"> <li class="list-group-item shag-nav-item-li">     
-                                <img src="{% static 'images/rocket_logo.png' %}" alt="rocket" class="me-3" style="width: 50px; height: 30px;"> Rocket </li> </a>
-							<a href=" "><li class="list-group-item shag-nav-item-li">
-                                <img src="{% static 'images/nagad_logo.png' %}" alt="nagad" class="me-3" style="width: 50px; height: 30px;" > Nagad </li></a>
-                            <a href=" "><li class="list-group-item shag-nav-item-li">
-                                <img src="{% static 'images/upay_logo.png' %}" alt="upay" class="me-3" style="width: 50px; height: 30px;" > U-Pay </li></a>
-                            <a href=" "><li class="list-group-item shag-nav-item-li">
-                                <img src="{% static 'images/bank_logo.png' %}" alt="bank" class="me-3" style="width: 50px; height: 30px;" > Bank Transfer </li></a>
-                            <a href=" "><li class="list-group-item shag-nav-item-li">
-                                <img src="{% static 'images/cod_logo.png' %}" alt="COD" class="me-3" style="width: 50px; height: 30px;" > Cash On Delivery </li></a>
+                            <a href="#"><li class="list-group-item shag-nav-item-li">     
+                                <img src="{% static 'images/rocket_logo.png' %}" alt="rocket" class="me-3" style="width: 50px; height: 30px;"> Rocket </li></a>
+							<a href="#"><li class="list-group-item shag-nav-item-li">
+                                <img src="{% static 'images/nagad_logo.png' %}" alt="nagad" class="me-3" style="width: 50px; height: 30px;"> Nagad </li></a>
+                            <a href="#"><li class="list-group-item shag-nav-item-li">
+                                <img src="{% static 'images/upay_logo.png' %}" alt="upay" class="me-3" style="width: 50px; height: 30px;"> U-Pay </li></a>
+                            <a href="#"><li class="list-group-item shag-nav-item-li">
+                                <img src="{% static 'images/bank_logo.png' %}" alt="bank" class="me-3" style="width: 50px; height: 30px;"> Bank Transfer </li></a>
+                            <a href="#"><li class="list-group-item shag-nav-item-li">
+                                <img src="{% static 'images/cod_logo.png' %}" alt="COD" class="me-3" style="width: 50px; height: 30px;"> Cash On Delivery </li></a>
 						</ul>
 				</div>
 			</div>
@@ -112,55 +113,63 @@
 </div>
 
 <script type="text/javascript">
-    var shipping = '{{order.shipping}}'
-    var total = '{{order.get_cart_total}}'
-    
-    var form = document.getElementById('form')
-    form.addEventListener('submit', function(e){
-        e.preventDefault()
-        console.log('Form Submitted...')
-        document.getElementById('form-button').classList.add("d-none");
-        document.getElementById('payment-info').classList.remove("d-none");
-    })
-    document.getElementById('make-payment').addEventListener('click', function(e){
-        submitFormData()
-    })
+    document.addEventListener('DOMContentLoaded', function() {
+        var shipping = '{{order.shipping}}'
+        var total = '{{order.get_cart_total}}'
+        
+        var form = document.getElementById('form')
+        csrftoken = form.getElementsByTagName('input')[0].value
+        console.log('New Token is :', csrftoken)
 
-    function submitFormData(){
-        console.log('Payment button clicked')
-        var userFormData = {
-            'name':form.name.value,
-            'email':form.email.value,
-            'total':total,
-        }
-
-        var shippingInfo = {
-            'address':form.address.value,
-            'city':form.city.value,
-            'state':form.state.value,
-            'zipcode':form.zipcode.value,
-        }
-
-        console.log('Shipping Info:', shippingInfo)
-        console.log('User Info:', userFormData)
-
-        var url = "/ProductList/process_order/"
-        fetch(url, {
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json',
-                'X-CSRFToken':csrftoken ,
-            }, 
-            body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
-            
+        form.addEventListener('submit', function(e){
+            e.preventDefault()
+            console.log('Form Submitted...')
+            document.getElementById('form-button').classList.add("d-none");
+            document.getElementById('payment-info').classList.remove("d-none");
         })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log('Success:', data);
-            alert('Transaction completed');  
-            window.location.href = "{% url 'home' %}"
+        document.getElementById('make-payment').addEventListener('click', function(e){
+            submitFormData()
         })
-    }
+
+        function submitFormData(){
+            console.log('Payment button clicked')
+            var userFormData = {
+                'name':form.name.value,
+                'email':form.email.value,
+                'total':total,
+            }
+
+            var shippingInfo = {
+                'address':form.address.value,
+                'city':form.city.value,
+                'state':form.state.value,
+                'zipcode':form.zipcode.value,
+            }
+
+            console.log('Shipping Info:', shippingInfo)
+            console.log('User Info:', userFormData)
+
+            var url = "/ProductList/process_order/"
+            fetch(url, {
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json',
+                    'X-CSRFToken':csrftoken,
+                }, 
+                body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
+                
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+                alert('Transaction completed');  
+                cart = {}
+                console.log('CART:', cart);
+	            document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/";
+                window.location.href = "{% url 'home' %}"
+            })
+        }
+    })
 </script>
 
 {% endblock content %}
